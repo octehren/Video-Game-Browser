@@ -27,3 +27,5 @@ README.md
 ├── tsconfig.json
 └── tsconfig.spec.json
 ==================================
+
+app/app.module.ts > where to declare usage of external modules
