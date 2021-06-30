@@ -1,5 +1,5 @@
 <div class="search-container">
-    <form class="search-form">
+    <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)"> <!-- will pass itself as param to onSubmit method @ search-bar.component.ts -->
         <span class="logo" routerLink="/">AngVGDB</span>
         <input
             class="search-input"
