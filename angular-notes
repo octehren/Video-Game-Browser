@@ -1,0 +1,52 @@
+Initial directory structure:
+==================================
+README.md
+├── angular.json
+├── karma.conf.js
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   └── app.module.ts
+│   ├── assets
+│   ├── environments
+│   │   ├── environment.prod.ts
+│   │   └── environment.ts
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.scss
+│   └── test.ts
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
+==================================
+
+app/app.module.ts > where to declare usage of external modules
+
+@NgModule => decorator (function that modifies a class/property definition) which takes a meta-data object as input.
+Angular defines decorators that attach metadata to classes or properties so that it knows how these should work (see https://angular.io/guide/glossary#decorator)
+Decorator pattern extends classes functionality at runtime, that's why it exists alongside subclassing (see https://stackoverflow.com/questions/4842978/decorator-pattern-versus-sub-classing)
+
+>Meta data object has:
+>>-declarations: make directives [in angular, a directive is a class that can modify attributes & structure of the DOM]
+(such as components & pipes) from the current module available to other directives in the current module;
+selectors of directives are only matched against HTML if they are declared or imported.
+>>-imports: makes exported declarations of other modules available in current module.
+Some imports might have .forRoot() called in them. This is usually done to attach them to a singleton. See: .forRoot register service in router singleton. See https://angular.io/guide/singleton-services#the-forroot-pattern
+>>-providers: external providers of dependencies to be injected (usually services)
+>>-bootstrap: root component that angular creates & inserts into index.html
+
+See (https://angular.io/guide/bootstrapping) for a more detailed explanation.
+
+>Components
+
+Generate component with $ng g c <component-name>
+
+Add new components to main app by copypasting the 'selector'
