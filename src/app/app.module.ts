@@ -25,7 +25,14 @@ import { GaugeModule } from 'angular-gauge';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    GaugeModule.forRoot(), // .forRoot register service in router singleton. See https://angular.io/guide/singleton-services#the-forroot-pattern
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
