@@ -17,10 +17,12 @@ import { MatSelectModule } from '@angular/material/select';
 
 /* added from external node packages */
 import { GaugeModule } from 'angular-gauge';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
