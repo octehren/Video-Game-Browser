@@ -39,6 +39,7 @@ Decorator pattern extends classes functionality at runtime, that's why it exists
 (such as components & pipes) from the current module available to other directives in the current module;
 selectors of directives are only matched against HTML if they are declared or imported.
 >>-imports: makes exported declarations of other modules available in current module.
+Some imports might have .forRoot() called in them. This is usually done to attach them to a singleton. See: .forRoot register service in router singleton. See https://angular.io/guide/singleton-services#the-forroot-pattern
 >>-providers: external providers of dependencies to be injected (usually services)
 >>-bootstrap: root component that angular creates & inserts into index.html
 
