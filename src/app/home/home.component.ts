@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public sortBy!: string;
 
-  constructor() { }
+  constructor() { 
+    this.initialize(); // needs to be initialized
+  }
+
+  initialize() {
+    this.sortBy = "";
+  }
 
   ngOnInit(): void {
+
   }
 
 }
