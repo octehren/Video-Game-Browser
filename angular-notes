@@ -49,4 +49,7 @@ See (https://angular.io/guide/bootstrapping) for a more detailed explanation.
 
 Generate component with $ng g c <component-name>
 
-Add new components to main app by copypasting the 'selector'
+Add new components to main app by copypasting the 'selector'.
+In case a model variable is used in a template but this gives a 'property has no initializer' error, TypeScript is probably using
+strict class initialization (https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#strict-class-initialization).
+Create an initializer method to solve this.
