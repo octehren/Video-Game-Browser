@@ -1,9 +1,9 @@
 <div class="filters">
     <mat-form-field>
-        <mat-label>Sort</mat-label>
-        <mat-select
-            panelClass="sort-select"
-            [(ngModel)]="sort"
+        <mat-label>Sort By</mat-label> <!-- [(ngModel)]>Variable attached to component -->
+        <mat-select 
+          panelClass="sort-select" 
+          [(ngModel)]="sortBy" 
         >
             <mat-option value="name">Name</mat-option>
             <mat-option value="-released">Released</mat-option>
@@ -14,4 +14,25 @@
             <mat-option value="metacritic">Metacritic</mat-option>
         </mat-select>
     </mat-form-field>
+</div>
+
+<div class="games">
+    <!-- these will be generated in an angular loop -->
+    <div class="game">
+        <div class="game-thumb-container">
+            <img 
+              src="#"
+              alt="thumbnail"
+              class="game-thumbnail"
+            />
+        </div>
+        <div class="game-description">
+            <p class="game-name">Name</p>
+            <img
+              class="game-platform"
+              src="#"
+              alt="slug"
+            />
+        </div><!-- game-description -->
+    </div>
 </div>
