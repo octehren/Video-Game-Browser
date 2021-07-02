@@ -67,3 +67,17 @@ All relevant links between these files will also be done.
 
 Generate services with $ng g s <service-name>.
 This will generate the service TS file + spec file. The service will also get injected into the app this way.
+Services are generally means to fetch some data; they do not store data by itself, but act as a channel on it.
+
+>> Interceptors
+This is a special kind of service which will intercept something (usually an HTTP request) and perform operations on it 
+before resuming (or altering) its course. Interceptor can implement the HttpInterceptor implement, and the interceptor shall call the 
+locally implemented intercept() method on the request. This can be used to do stuff such as logging, error handling, authentication, etc.
+Read here for more details: https://ultimatecourses.com/blog/intro-to-angular-http-interceptors .
+
+
+>Interfaces
+
+This is a Typescript feature which basically translates to 'a contract for an object'.
+Remember that JS objects are basically dictionaries. The interface will declare which fields
+and types 'object' might have. Here's a more detailed explanation: https://www.typescriptlang.org/docs/handbook/2/objects.html .
