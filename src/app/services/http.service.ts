@@ -1,3 +1,4 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,23 @@ import { Injectable } from '@angular/core';
 })
 export class HttpService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  // ? operator means this var might be null; parameter is optional
+  getGameList(
+    order: string, 
+    search?: string
+  ): Observable<APIResponse<Game>> {
+    let params:HttpParams; // immutable class, all changes return new instance
+
+    if (search) {
+      params = new HttpParams().set('order', order).set('search', search);
+    } else {
+      params = new HttpParams().set('order', order);
+    }
+
+    return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {
+      params: params,
+    });
+  }
 }
