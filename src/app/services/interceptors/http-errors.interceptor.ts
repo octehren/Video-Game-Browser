@@ -15,7 +15,7 @@ export class HttpErrorsInterceptor implements HttpInterceptor {
             catchError((err) => {
                 console.log(err);
                 return observableThrowError(err);
-            });
-        )
+            })
+        );
     }
 }
