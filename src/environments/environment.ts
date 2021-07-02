@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  BASE_URL: "http://localhost:4200"
+  BASE_URL: "http://localhost:4200",
+  rapidApiKey: "475aadd6c5msh5cdb3f6f9e35095p158531jsn39525231034f",
+  rawgDbApiKey: "7a9c5b4d648b4bc2b30ec352ffb6f278"
 };
 
 /*
