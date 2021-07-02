@@ -46,12 +46,12 @@ import { HttpErrorsInterceptor } from './services/interceptors/http-errors.inter
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpApiAuthInterceptor,
-      multi: true
+      multi: true // allows for a different provider in a different context
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorsInterceptor,
-      multi: true
+      multi: true // allows for a different provider in a different context
     }
   ],
   bootstrap: [AppComponent]
