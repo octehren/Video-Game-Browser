@@ -49,7 +49,21 @@ See (https://angular.io/guide/bootstrapping) for a more detailed explanation.
 
 Generate component with $ng g c <component-name>
 
-Add new components to main app by copypasting the 'selector'.
+Components are usually standalone units of visual & logic. Add new components to main app by copypasting the 'selector'.
 In case a model variable is used in a template but this gives a 'property has no initializer' error, TypeScript is probably using
 strict class initialization (https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#strict-class-initialization).
 Create an initializer method to solve this.
+
+Components can be auto generated in the command line with `$ng g c <component-name>` .
+This will create:
+-An HTML template file 
+-A SASS specific for the component
+-A component class file
+-A component spec file to test the class
+
+All relevant links between these files will also be done.
+
+>Services 
+
+Generate services with $ng g s <service-name>.
+This will generate the service TS file + spec file. The service will also get injected into the app this way.
