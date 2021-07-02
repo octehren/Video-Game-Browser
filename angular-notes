@@ -73,6 +73,7 @@ Services are generally means to fetch some data; they do not store data by itsel
 This is a special kind of service which will intercept something (usually an HTTP request) and perform operations on it 
 before resuming (or altering) its course. Interceptor can implement the HttpInterceptor implement, and the interceptor shall call the 
 locally implemented intercept() method on the request. This can be used to do stuff such as logging, error handling, authentication, etc.
+The interceptor method accepts two params: the request (the object which will be processed) and the handler (what to do after processing).
 Read here for more details: https://ultimatecourses.com/blog/intro-to-angular-http-interceptors .
 
 
