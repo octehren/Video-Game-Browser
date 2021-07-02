@@ -14,7 +14,7 @@ export class HttpApiAuthInterceptor implements HttpInterceptor {
         req = req.clone({ // clones request being sent, attaches API auth properties below:
             setHeaders: {
                 "x-rapidapi-key": env.rapidApiKey,
-                "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
+                "x-rapidapi-host": env.vidyaApiHost,
             },
             setParams: {
                 key: env.rawgDbApiKey,

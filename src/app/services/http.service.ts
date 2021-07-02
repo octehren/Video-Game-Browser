@@ -24,7 +24,7 @@ export class HttpService {
       params = new HttpParams().set('order', order);
     }
 
-    return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {
+    return this.http.get<APIResponse<Game>>(`${env.vidyaApiURL}/games`, {
       params: params,
     });
   }
