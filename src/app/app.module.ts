@@ -17,8 +17,8 @@ import { MatSelectModule } from '@angular/material/select';
 
 /* added from external node packages */
 import { GaugeModule } from 'angular-gauge';
-import { SearchBarComponent } from './search-bar/search-bar.component';
-import { HomeComponent } from './home/home.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
