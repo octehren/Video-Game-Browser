@@ -6,7 +6,7 @@ export interface Game {
     metacritic_url: string;
     website: string;
     description: string;
-    metacritic_score: number;
+    metacritic: number; // changed metacritic_score to metacritic as it must match external API
     genres: Array<Genre>;
     parent_platforms: Array<ParentPlatform>;
     publishers: Array<Publishers>;
@@ -29,6 +29,7 @@ interface Genre {
 interface ParentPlatform {
     platform: {
         name: string;
+        slug: string;
     }
 }
 
