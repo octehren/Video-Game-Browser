@@ -23,6 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 /* services */
 import { HttpApiAuthInterceptor } from './services/interceptors/http-api-auth.interceptor';
 import { HttpErrorsInterceptor } from './services/interceptors/http-errors.interceptor';
+import { HttpLoggerInterceptor } from './services/interceptors/http-logger.interceptor';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,11 @@ import { HttpErrorsInterceptor } from './services/interceptors/http-errors.inter
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorsInterceptor,
+      multi: true // allows for a different provider in a different context
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpLoggerInterceptor,
       multi: true // allows for a different provider in a different context
     }
   ],
