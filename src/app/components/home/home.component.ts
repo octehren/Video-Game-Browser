@@ -11,7 +11,7 @@ import { APIResponse, Game } from 'src/models';
 export class HomeComponent implements OnInit {
   public sortBy!: string;
   public games?: Array<Game>;
-  
+
   // connect http service & router
   constructor(
     private httpService: HttpService,
@@ -41,6 +41,10 @@ export class HomeComponent implements OnInit {
         this.games = gameList.results;
         console.log("Fetched games:\n", gameList.results);
       });
+  }
+
+  openGameDetails(gameId: number):void {
+    console.log("Opening details page for Game #", gameId, "\n");
   }
 
 }
