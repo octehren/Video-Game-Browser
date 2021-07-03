@@ -4,14 +4,15 @@
         <mat-select 
           panelClass="sort-select" 
           [(ngModel)]="sortBy" 
-        >
+          (selectionChange)="fetchGamesData(sortBy)"
+        ><!-- (selectionChange) is an event catcher which will trigger a function in the component model-->
             <mat-option value="name">Name</mat-option>
             <mat-option value="-released">Released</mat-option>
             <mat-option value="-added">Added</mat-option>
             <mat-option value="-created">Created</mat-option>
             <mat-option value="-updated">Updated</mat-option>
             <mat-option value="-rating">Rating</mat-option>
-            <mat-option value="metacritic">Metacritic</mat-option>
+            <mat-option value="metacrit">Metacritic</mat-option>
         </mat-select>
     </mat-form-field>
 </div>

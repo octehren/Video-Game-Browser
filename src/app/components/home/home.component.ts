@@ -10,8 +10,9 @@ import { APIResponse, Game } from 'src/models';
 })
 export class HomeComponent implements OnInit {
   public sortBy!: string;
-  public games!: Array<Game>;
-
+  public games?: Array<Game>;
+  
+  // connect http service & router
   constructor(
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
   initialize() {
     this.sortBy = "";
   }
-
+  // on first render, fetch game data sorted by metacritic score
   ngOnInit(): void { // first phase in component lifecycle
     this.activatedRoute.params.subscribe((params: Params) => {
       if (params['game-search']) { // if there are search params, perform search

@@ -19,9 +19,9 @@ export class HttpService {
     let params:HttpParams; // immutable class, all changes return new instance
 
     if (search) {
-      params = new HttpParams().set('order', order).set('search', search);
+      params = new HttpParams().set('ordering', order).set('search', search);
     } else {
-      params = new HttpParams().set('order', order);
+      params = new HttpParams().set('ordering', order);
     }
 
     return this.http.get<APIResponse<Game>>(`${env.vidyaApiURL}/games`, {
