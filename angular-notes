@@ -112,3 +112,9 @@ Called here:
 Will throw an error if the 'slug' attribute is not defined, as it is a breach of interface contract.
 
 If a model shall be used by different files, it is recommended to put it inside a 'shared' folder. See the angular style guide for more: https://angular.io/guide/styleguide
+
+
+>Subscriptions
+Many async operations, such as getting data from other parts of the app or external APIs, involve generating a subscription.
+It is good practice to implement the OnDestroy interface and unsubscribe of these events before leaving the component to prevent memory leaks, as the
+operation will be performed unless explicitly cancelled.
