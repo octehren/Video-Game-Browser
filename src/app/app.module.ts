@@ -17,19 +17,24 @@ import { MatSelectModule } from '@angular/material/select';
 
 /* added from external node packages */
 import { GaugeModule } from 'angular-gauge';
+
+/* components */
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HomeComponent } from './components/home/home.component';
+import { GameDetailsComponent } from './components/game-details/game-details.component';
 
 /* services */
 import { HttpApiAuthInterceptor } from './services/interceptors/http-api-auth.interceptor';
 import { HttpErrorsInterceptor } from './services/interceptors/http-errors.interceptor';
 import { HttpLoggerInterceptor } from './services/interceptors/http-logger.interceptor';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    HomeComponent
+    HomeComponent,
+    GameDetailsComponent
   ],
   imports: [
     BrowserModule,
