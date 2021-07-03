@@ -85,3 +85,30 @@ Multi providers can allow for different providers in different contexts. See: ht
 This is a Typescript feature which basically translates to 'a contract for an object'.
 Remember that JS objects are basically dictionaries. The interface will declare which fields
 and types 'object' might have. Here's a more detailed explanation: https://www.typescriptlang.org/docs/handbook/2/objects.html .
+
+>Models
+
+It is good practice to declare models for objects which will be used throughout the app. 
+The official recommendation by the Angular team is to use bare ES6 classes with strongly typed instance
+variables for services or declarables (components, directives and pipes) and interfaces for data models.
+For instance, this model:
+
+interface ParentPlatform {
+    platform: {
+        name: string;
+        slug: string;
+    }
+}
+
+Called here:
+
+<img
+    *ngFor="let gamePlatform of game.parent_platforms"
+    class="game-platform"
+    src="assets/images/platform-icons/{{ gamePlatform.platform.slug }}.svg"
+    alt="{{ gamePlatform.platform.slug }}"
+/>
+
+Will throw an error if the 'slug' attribute is not defined, as it is a breach of interface contract.
+
+If a model shall be used by different files, it is recommended to put it inside a 'shared' folder. See the angular style guide for more: https://angular.io/guide/styleguide
