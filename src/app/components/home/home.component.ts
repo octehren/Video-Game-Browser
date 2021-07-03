@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
@@ -9,7 +9,7 @@ import { APIResponse, Game } from 'src/models';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   public sortBy!: string;
   public games?: Array<Game>;
   // refactor: register subscriptions as attributes to avoid memory leaks
@@ -38,6 +38,15 @@ export class HomeComponent implements OnInit {
         this.fetchGamesData('metacrit'); // API looks for 'metacrit', not 'metacritic'
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.gameSub) {
+      this.gameSub.unsubscribe();
+    }
+    if (this.routeSub) {
+      this.routeSub.unsubscribe();
+    }
   }
 
   fetchGamesData(sortBy: string, search?: string):void {
