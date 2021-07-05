@@ -1,60 +1,64 @@
 .game {
+
     &-tabs {
-        background: rgb(62 81 181 / 61%);
+      background: rgb(63 81 181 / 61%);
+      color: #fff;
+      text-align: left;
+      padding: 10px;
+  
+      &-par {
+        padding: 20px 20px 0 20px;
+        margin-bottom: 0;
+      }
+  
+      &-link {
         color: #fff;
-        padding: 10px;
-        text-align: left;
-
-        ::ng-deep .mat-tab-labes {
-            justify-content: center;
+      }
+  
+      &-votes {
+        margin-left: 20px;
+        display: flex;
+  
+        &-count {
+          margin-left: 5px;
         }
+      }
 
-        &-par {
-            margin-bottom: 0;
-            padding: 20px 20px 0 20px;
-        }
-
-        &-link {
-            color: #fff;
-        }
-
-        &-votes {
-            display: flex;
-            margin-left: 20px;
-
-            &-count {
-                margin-left: 5px;
-                margin-right: 10px;
-                vertical-align: super;
-            }
-
-            &-up {
-                color: #5ee432;
-            }
-
-            &-down {
-                color: #ef4655;
-            }
-        }
+      ::ng-deep .mat-tab-labels {
+        justify-content: center;
+      }
     }
-
+  
+    &-votes {
+      &-up {
+        color: #5ee432;
+      }
+      &-down {
+        color: #ef4655;
+      }
+  
+      &-count {
+        margin-left: 5px;
+        margin-right: 10px;
+        vertical-align: super;
+      }
+    }
+  
     &-description {
-        padding: 20px;
+      padding: 20px;
     }
-
-    /* screenshot tab */
+   
     &-screenshot {
-        margin-top: 5px;
-        width: calc(50% - 10px);
-
-        &:nth-child(even) {
-            margin-left: 10px;
-        }
+      margin-top: 5px;
+      width: calc(50% - 10px);
+  
+      &:nth-child(even) {
+        margin-left: 10px;
+      }
     }
-
-    /* trailers tab */
+  
     &-trailer {
-        width: 100%;
-        margin: 20px 0;
+      width: 100%;
+      margin: 20px 0;
     }
-}
+  }
