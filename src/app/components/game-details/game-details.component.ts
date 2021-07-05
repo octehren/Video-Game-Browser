@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
@@ -9,7 +9,7 @@ import { Game } from 'src/models';
   templateUrl: './game-details.component.html',
   styleUrls: ['./game-details.component.scss']
 })
-export class GameDetailsComponent implements OnInit {
+export class GameDetailsComponent implements OnInit, OnDestroy {
   public gameRating: number = 0;
   public gameId!: string;
   public game!: Game;
@@ -27,6 +27,15 @@ export class GameDetailsComponent implements OnInit {
       this.gameId = params['gameId'];
       this.setGameDetails(this.gameId);
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.routeSub) {
+      this.routeSub.unsubscribe();
+    }
+    if (this.gameSub) {
+      this.gameSub.unsubscribe();
+    }
   }
 
   setGameDetails(id: string): void {
