@@ -1,1 +1,58 @@
-<p>game-details-tabs works!</p>
+<div class="game-tabs"> <!-- group of tabs using angular material -->
+    <mat-tab-group mat-align-tabs="start" backgroundColor="primary"> <!-- primary:  pre-selected theme color -->
+        <mat-tab label="About">
+            <p class="game-tabs-par">
+                Platforms:
+                <span>
+                    PC
+                </span>
+            </p>
+            <p class="game-tabs-par">
+                Publishers:
+                <span>
+                    Konami
+                </span>
+            </p>
+            <p class="game-tabs-par">
+                Website:
+                <a class="game-tabs-link" href="#" target="_blank">
+
+                </a>
+            </p>
+            <div class="game-description">
+                NOICE
+            </div>
+            <p class="game-tabs-votes">
+                <span>
+                    <mat-icon class="game-votes-up">
+                        <span class="game-votes-count">
+
+                        </span>
+                    </mat-icon>
+                </span>
+                <span>
+                    <mat-icon class="game-votes-down">
+                        <span class="game-votes-count">
+                            
+                        </span>
+                    </mat-icon>
+                </span>
+            </p><!-- game tabs votes -->
+        </mat-tab>
+        <mat-tab label="Screenshots">
+            <img
+              class="game-screenshot"
+              src="#"
+              alt="screenshot"
+            />
+        </mat-tab>
+        <mat-tab label="Trailers">
+            <video
+              class="game-trailer"
+              controls
+            >
+              <source type="video/mp4" src="#"/>
+            </video>
+        </mat-tab>
+    </mat-tab-group>
+</div>
