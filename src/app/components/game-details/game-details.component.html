@@ -38,7 +38,8 @@
                 </div>
             </div>
             <!-- here will go tabs -->
-            <app-game-details-tabs></app-game-details-tabs>
+            <!-- [game]="game" passes the relevant game instance to the child component -->
+            <app-game-details-tabs [game]="game"></app-game-details-tabs>
         </div>
     </div>
 </div>
