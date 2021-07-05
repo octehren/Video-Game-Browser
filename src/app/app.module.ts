@@ -22,6 +22,7 @@ import { GaugeModule } from 'angular-gauge';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
+import { GameDetailsTabsComponent } from './components/game-details-tabs/game-details-tabs.component';
 
 /* services */
 import { HttpApiAuthInterceptor } from './services/interceptors/http-api-auth.interceptor';
@@ -29,12 +30,14 @@ import { HttpErrorsInterceptor } from './services/interceptors/http-errors.inter
 import { HttpLoggerInterceptor } from './services/interceptors/http-logger.interceptor';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     HomeComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    GameDetailsTabsComponent
   ],
   imports: [
     BrowserModule,
