@@ -43,11 +43,13 @@ export class HttpService {
       gameScreenshotsRequest
     }).pipe(
       map((resp: any) => {
-        return {
-          ...resp['gameInfoRequest'],
+        const gameDetailsObj = { // spread operator, will make all of gameInfoRequest fields into fields of the returned object
+          ...resp['gameInfoRequest'], 
           trailers: resp['gameTrailersRequest']?.results,
           screenshots: resp['gameScreenshotsRequest']?.results,
-        }
+        };
+        console.log("Game details:\n", gameDetailsObj);
+        return gameDetailsObj;
       })
     );
   }
